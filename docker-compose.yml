@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  api:
+    image: pneumonia-detector-api
+    build: ./server
+    ports:
+      - 3000:80
+    restart: on-failure
+
+  webapp:
+    image: pneumonia-detector
+    build: ./webapp
+    ports:
+      - 80:80
+    restart: on-failure
