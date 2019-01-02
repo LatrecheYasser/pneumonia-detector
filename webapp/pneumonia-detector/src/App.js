@@ -9,22 +9,23 @@ class App extends Component {
     this.setState({
         visible : true
     });
-}
+  }
 
-closeModal() {
+  closeModal() {
     this.setState({
         visible : false
     });
-}
+  }
 
-  // this state is used to save the file the has been uploaded in this case it's the x-ray picture 
-  state={
+  // this state is used to save the file the has been uploaded in this case it's the x-ray picture
+  state = {
     selectedImage:null,
     visible : false,
     Normal:0,
     Sick:0
   }
-  Results={
+
+  Results = {
 
   }
 
@@ -32,23 +33,23 @@ closeModal() {
   //this hendler is used to save the image into a state and turn set the uploadedImage variable to true so we can check after it we
   //already have a pic saved , we can virifie if the selectedImage is null inside the state but i will work with this i will change it later
 
-  uploadedImage = false 
+  uploadedImage = false
   fileChangedHandler = (event) => {
 
     this.setState({
       selectedImage : event.target.files[0]
     })
-    this.uploadedImage=true
+    this.uploadedImage = true
   }
 
 
-  // this is the evenhandler of the sumbmit clic , it sends the image using axios 
-  
-  OnUploadHeanderl = () =>{
+  // this is the evenhandler of the sumbmit clic , it sends the image using axios
+
+  OnUploadHeanderl = () => {
     const fd =new FormData();
     fd.append('chest_xray',this.state.selectedImage);
-    // this url should be changed after for now the API is runing under this addres in my machine 
-    Axios.post('http://130.211.108.207/pred',fd).then( response=>{  
+    // this url should be changed after for now the API is runing under this addres in my machine
+    Axios.post('http://130.211.108.207:3000/pred',fd).then( response=>{
     this.setState({
       Normal : response.data['NORMAL'],
       Sick   : response.data['PNEUMONIA']
@@ -73,7 +74,7 @@ closeModal() {
           it's so easy all what you have to do is to load you x-ray image to our web site and the web site will show you how much is the probability to be sick or not
           we really wish you a good  health .
           </p>
-          
+
             <input type="file" onChange={this.fileChangedHandler}/>
             <button onClick={this.OnUploadHeanderl}>send</button>
 
@@ -86,7 +87,7 @@ closeModal() {
                         <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
                     </div>
                 </Modal>
-            
+
 
           </div>
         </header>
