@@ -28,6 +28,7 @@ class App extends Component {
   OnUploadHeanderl = () =>{
     const fd =new FormData();
     fd.append('chest_xray',this.state.selectedImage);
+    // this url should be changed after for now the API is runing under this addres in my machine 
     Axios.post('http://127.0.0.1:3003/pred',fd).then( response=>{
       console.log('the respons is ',  response.data.json);
     } ) 
