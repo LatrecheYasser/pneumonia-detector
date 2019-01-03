@@ -3,7 +3,7 @@ Side Project for the Deep Learning with Pytorch - Udacity challenge
 
 Our goal was to make an easy to use application that can predict if someone
 has Pneumonia or not given its chest x-ray.
-![example chest x-ray]()
+![example chest x-ray](/imgs/example-chest-xray.jpg)
 
 ## Steps
 - First, we trained a neural network to classify chest x-rays (Pneumonia/Normal).
