@@ -20,7 +20,7 @@ has Pneumonia or not given its chest x-ray.
 ## How to use it?
 
 #### The Web Application
-We made a simple web application to load and see the reasults
+We made a simple web application to load your Chest X-ray and see the reasults
 
 The first step is to load the image using the 'Upload your X-ray ' button 
 ![main page](/imgs/Main-page.png)
