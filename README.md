@@ -22,7 +22,7 @@ we made an easy web application to use just one page to load and see the reasult
 the first step is to load the image fro the 'Upload your X-ray ' button 
 ![main page](/imgs/Main-page.png)
 and the Second step is to see the results by clicking on the  'See the Results' Button
-![main page](/imgs/Result.png)
+![Results](/imgs/Result.png)
 
 #### The CLI utility
 First, you need to make sure that there is an API available before using the CLI utility (is_pneumo.py). At the time of writing this, the API was hosted on http://130.211.108.207:3000/pred
