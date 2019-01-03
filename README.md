@@ -8,13 +8,13 @@ has Pneumonia or not given its chest x-ray.
 ## Steps
 - First, we trained a neural network to classify chest x-rays (Pneumonia/Normal).
 
-  The training was done on [Kaggle](https://www.kaggle.com/yasserlatreche/pneumonia-99-accuracy-using-densenet121) but you can also find a copy of the notebook under the notebooks sub directory [here](/tree/master/notebooks)
+  The training was done on [Kaggle](https://www.kaggle.com/yasserlatreche/pneumonia-99-accuracy-using-densenet121) but you can also find a copy of the notebook under the notebooks sub directory
 
-- Then we built a RESTful API around that model so other applications can use this service. The RESTful API code is under the server sub directory [here](/tree/master/server)
+- Then we built a RESTful API around that model so other applications can use this service. The RESTful API code is under the server sub directory
 
-- Finally we built a web application that uses the API and make it's usage really easy, the source code is under the webapp sub directory [here](/tree/master/webapp).
+- Finally we built a web application that uses the API and make it's usage really easy, the source code is under the webapp sub directory
 
-  You love terminals ? there is also a CLI utility for you [here](/blob/master/is_pneumo.py)
+  You love terminals ? there is also a CLI utility for you, check the is_pneumo.py script
 
 ## How to use it?
 
