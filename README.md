@@ -17,10 +17,14 @@ has Pneumonia or not given its chest x-ray.
 
   You love terminals ? there is also a CLI utility for you, check the is_pneumo.py script
 
+## How to use it?
+
 #### The Web Application
-we made an easy web application to use just one page to load and see the reasults 
-the first step is to load the image fro the 'Upload your X-ray ' button 
+We made a simple web application to load and see the reasults
+
+The first step is to load the image using the 'Upload your X-ray ' button 
 ![main page](/imgs/Main-page.png)
+
 and the Second step is to see the results by clicking on the  'See the Results' Button
 ![Results](/imgs/Result.png)
 
