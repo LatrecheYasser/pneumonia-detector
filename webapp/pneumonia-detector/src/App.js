@@ -45,17 +45,19 @@ class App extends Component {
 
   // this is the evenhandler of the sumbmit clic , it sends the image using axios
 
-  OnUploadHeanderl = () => {
-    const fd =new FormData();
-    fd.append('chest_xray',this.state.selectedImage);
-    // this url should be changed after for now the API is runing under this addres in my machine
-    Axios.post('http://130.211.108.207:3000/pred',fd).then( response=>{
-    this.setState({
-      Normal : response.data['NORMAL'],
-      Sick   : response.data['PNEUMONIA']
-    })
-    this.openModal()
-    })
+  OnUploadHeanderl = () =>{
+    if(this.state.selectedImage==null)alert('You didn\'t choose any Picture please selecte one and click agin');
+    else{    const fd =new FormData();
+              fd.append('chest_xray',this.state.selectedImage);
+              // this url should be changed after for now the API is runing under this addres in my machine
+              Axios.post('http://130.211.108.207:3000/pred',fd).then( response=>{
+              this.setState({
+                Normal : response.data['NORMAL'],
+                Sick   : response.data['PNEUMONIA']
+              })
+              this.openModal()
+              })
+  }
 
   }
   render() {
@@ -63,7 +65,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         <h3>Pneumonia Detector</h3>
-          <div>
+          <div style={{backgroundColor:'#282c34'}}>
           <img src="/Image/Pen.jpg" style={{float:'left'}} alt="an example of X-ray pic" ></img>
           <h4 >Pneumonia detector</h4>
           <p>
@@ -74,14 +76,15 @@ class App extends Component {
           it's so easy all what you have to do is to load you x-ray image to our web site and the web site will show you how much is the probability to be sick or not
           we really wish you a good  health .
           </p>
-
-            <input type="file" onChange={this.fileChangedHandler}/>
-            <button onClick={this.OnUploadHeanderl}>send</button>
+            <label className="button1"> Upload your X-ray
+            <input type="file" onChange={this.fileChangedHandler}/></label>
+            <br/>
+            <button className="button1" onClick={this.OnUploadHeanderl}>See the Results</button>
 
                 <Modal visible={this.state.visible} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div style={{color:'black'}}>
                         <p>the resaults are  </p>
-                        <p> {(this.state.Normal*100).toFixed(4)} % for being Normal </p> <br/>
+                        <p> {(this.state.Normal*100).toFixed(4)} % for being Normal </p>
                         <p> {(this.state.Sick*100).toFixed(4) } % for being sick </p>
                         <p>thanks for using our service </p>
                         <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
